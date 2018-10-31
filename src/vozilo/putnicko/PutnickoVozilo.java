@@ -8,8 +8,8 @@ public class PutnickoVozilo extends MotornoVozilo{
 	private Boolean kabriolet;
 	private Integer brojVrata;
 	
-	public PutnickoVozilo(String marka, Integer brojPutnika, Boolean kabriolet, Integer brojVrata) {
-		super(marka, brojPutnika);
+	public PutnickoVozilo(String marka, Integer brojPutnika, Boolean kabriolet, Integer brojVrata, Double cena) {
+		super(marka, brojPutnika, cena);
 		this.kabriolet = kabriolet;
 		this.brojVrata = brojVrata;
 	}
@@ -37,6 +37,11 @@ public class PutnickoVozilo extends MotornoVozilo{
 
 	public void setBrojVrata(Integer brojVrata) {
 		this.brojVrata = brojVrata;
+	}
+
+	@Override
+	public Double prodajnaCena() {
+		return getCena();
 	}
 	
 	
