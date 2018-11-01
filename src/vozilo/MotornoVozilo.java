@@ -1,6 +1,8 @@
 package vozilo;
 
-public abstract class MotornoVozilo {
+import javax.management.monitor.MonitorMBean;
+
+public abstract class MotornoVozilo implements KategorijaZaUpravljanje {
 
 	private String marka;
 	private Integer brojPutnika;

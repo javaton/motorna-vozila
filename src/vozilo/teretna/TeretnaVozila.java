@@ -35,6 +35,17 @@ public class TeretnaVozila extends MotornoVozilo {
 public Double prodajnaCena() {
 	return getCena();
 }
+
+@Override
+public String minPotrebnaKategorija() {
+	return new String("C"); //ILI return "C";
+}
+
+@Override
+public Boolean starsnoOgranicenje() {
+	// TODO Auto-generated method stub
+	return null;
+}
 	
 	
 }

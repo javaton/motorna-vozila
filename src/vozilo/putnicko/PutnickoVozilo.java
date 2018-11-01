@@ -41,7 +41,18 @@ public class PutnickoVozilo extends MotornoVozilo{
 
 	@Override
 	public Double prodajnaCena() {
-		return getCena();
+		// TODO Auto-generated method stub
+		return getCena()  * 2;
+	}
+
+	@Override
+	public String minPotrebnaKategorija() {
+		return KategorijaVozackeDozvole.B.toString();
+	}
+
+	@Override
+	public Boolean starsnoOgranicenje() {
+		return true;
 	}
 	
 	
