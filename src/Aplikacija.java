@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 import util.Formater;
 import vozilo.KategorijaZaUpravljanje;
 import vozilo.MotornoVozilo;
@@ -12,18 +14,21 @@ public class Aplikacija {
 		
 //		MotornoVozilo vozilo = new MotornoVozilo("FIAT", 2);
 		
-		MotornoVozilo punto = new PutnickoVozilo("FIAT", 4, true, 3, 150D);
+		MotornoVozilo punto = new PutnickoVozilo("FIAT", 4, true, 3, 150D, LocalDate.of(2017, 12, 01));
 //		punto = null; //Stavljeno zbod demostracije greske null pointer exception
 		punto.stampajInformacije();
+		System.out.println("Registracija istice za " + punto.brojDanaDoIstekaRegistracije());
 		
-		
-		MotornoVozilo fap = new Kamion("FAP", 3, 2000, 2000, 100D);
+		MotornoVozilo fap = new Kamion("FAP", 3, 2000, 2000, 100D, LocalDate.now());
 		fap.stampajInformacije();
-		
-		KategorijaZaUpravljanje ka = new PutnickoVozilo("FORD", 3, false, 3, 550D);
+		System.out.println("Registracija istice za " + fap.brojDanaDoIstekaRegistracije());
+
+		KategorijaZaUpravljanje ka = new PutnickoVozilo("FORD", 3, false, 3, 550D, LocalDate.now());
 		System.out.println(ka.starsnoOgranicenje());
 		
-		Kamion k = new Kamion("FAP", 2, 200, 200, 10D);
+	
+		
+		Kamion k = new Kamion("FAP", 2, 200, 200, 10D, LocalDate.now());
 		k.stampajInformacije();
 		TeretnaVozila tv = k;
 		tv.stampajInformacije();
@@ -33,7 +38,7 @@ public class Aplikacija {
 		System.out.println(kzv.minPotrebnaKategorija() 
 				+ " " + kzv.starsnoOgranicenje() );
 		
-		PutnickoVozilo yugo = new PutnickoVozilo("zastava", 4, false, 3, 500D);
+		PutnickoVozilo yugo = new PutnickoVozilo("zastava", 4, false, 3, 500D, LocalDate.now());
 		System.out.println(yugo.minPotrebnaKategorija());
 		
 //		Primer kada importujemo klasu sa celom putanjim do nje

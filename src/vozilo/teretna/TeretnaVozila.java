@@ -1,5 +1,7 @@
 package vozilo.teretna;
 
+import java.time.LocalDate;
+
 import vozilo.MotornoVozilo;
 
 public class TeretnaVozila extends MotornoVozilo {
@@ -7,8 +9,8 @@ public class TeretnaVozila extends MotornoVozilo {
 	private Integer nosivost;
 	private Integer zapremina;
 	
-	public TeretnaVozila(String marka, Integer brojPutnika, Integer nosivost, Integer zapremina, Double cena) {
-		super(marka, brojPutnika, cena);
+	public TeretnaVozila(String marka, Integer brojPutnika, Integer nosivost, Integer zapremina, Double cena, LocalDate datumRegistracije) {
+		super(marka, brojPutnika, cena, datumRegistracije);
 		this.nosivost = nosivost;
 		this.zapremina = zapremina;
 	}
@@ -45,6 +47,11 @@ public String minPotrebnaKategorija() {
 public Boolean starsnoOgranicenje() {
 	// TODO Auto-generated method stub
 	return null;
+}
+
+@Override
+public Integer brojDanaDoIstekaRegistracije() {
+	return (getDatumRegistracije().plusMonths(6).getDayOfYear() - LocalDate.now().getDayOfYear())/2;
 }
 	
 	

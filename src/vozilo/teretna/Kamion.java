@@ -1,11 +1,12 @@
 package vozilo.teretna;
 
+import java.time.LocalDate;
+
 public class Kamion extends TeretnaVozila {
 
 
-	public Kamion(String marka, Integer brojPutnika, Integer nosivost, Integer zapremina, Double cena) {
-		super(marka, brojPutnika, nosivost, zapremina, cena);
-		// TODO Auto-generated constructor stub
+	public Kamion(String marka, Integer brojPutnika, Integer nosivost, Integer zapremina, Double cena, LocalDate datumRegistracije) {
+		super(marka, brojPutnika, nosivost, zapremina, cena, datumRegistracije);
 	}
 
 	@Override
